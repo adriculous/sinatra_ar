@@ -1,0 +1,16 @@
+<h3>This is a person show page!</h3>
+<div class="row">
+     <div class="col-xs-12 cold-md-8">
+          <h1 class="bg-primary"><%= "#{@person.first_name} #{@person.last_name}" %></h1>
+     </div>
+     <div class="col-md-4 col-md-offset-4">
+          <p class="text-info"><strong>Birthdate:</strong> <%= "#{@person.birthdate}" %></p>
+     </div>
+</div>
+<div class="row">
+     <div class="col-md-12">
+          <p class="bg-success">
+               <%= "#{@message}" %>
+          </p>
+     </div>
+</div>
