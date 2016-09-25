@@ -20,7 +20,7 @@ end
 
 get '/people/:id/edit' do
      @person = Person.find(params[:id])
-     erb :'/people/edit'
+     erb :"/people/edit"
 end
 
 put '/people/:id' do
