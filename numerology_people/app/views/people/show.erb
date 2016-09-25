@@ -4,7 +4,7 @@
           <h1 class="bg-primary"><%= "#{@person.first_name} #{@person.last_name}" %></h1>
      </div>
      <div class="col-md-4 col-md-offset-4">
-          <p class="text-info"><strong>Birthdate:</strong> <%= "#{@person.birthdate}" %></p>
+          <p class="text-info"><strong>Birthdate:</strong> <%= "#{@person.birthdate.strftime("%m%d%Y")}" %></p>
      </div>
 </div>
 <div class="row">
