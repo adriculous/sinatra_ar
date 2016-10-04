@@ -1,0 +1,24 @@
+body {
+     font-family: 'Roboto', sans-serif;
+     font-size: 14px;
+     background-image: url(../img/giftly.png);
+     background-repeat: repeat;
+}
+
+.textlogo {
+     font-family: 'Merienda One', cursive;
+     color: darkblue;
+}
+
+.new-person {
+ 
+}
+
+.newperson-header {
+     font-family: 'Caveat Brush', cursive;
+     color: crimson;
+}
+ 
+.edit-person {
+ 
+}
