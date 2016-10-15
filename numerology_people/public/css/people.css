@@ -20,5 +20,15 @@ body {
 }
  
 .edit-person {
- 
+
+}
+
+.editperson-header {
+	 font-family: 'Caveat Brush', cursive;
+	 color: crimson;
+}
+.errors {
+	font-family: 'Walter Turncoat', cursive;
+	font-variant: small-caps;
+	color: crimson;
 }

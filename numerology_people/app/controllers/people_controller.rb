@@ -15,13 +15,14 @@ post '/people' do
       birthdate = Date.strptime(params[:birthdate], "%m%d%Y")
     end
   
-    person = Person.create(first_name: params[:first_name], last_name: params[:last_name], birthdate: birthdate)
+    @person = Person.new(first_name: params[:first_name], last_name: params[:last_name], birthdate: birthdate)
      if @person.valid?
           @person.save
-          redirect "/people/#{person.id}"
+          redirect "/people/#{@person.id}"
      else
-          @person.errors.full_messages.each do |msg|
-               @errors = "#{@errors} #{msg}."
+		  @errors = 'You added something invalid. Try again.'
+          @person.errors.full_messages.each do |message|
+               @errors = "#{@errors} #{message}."
      end
           erb :"/people/new"
      end
@@ -34,12 +35,20 @@ end
 
 put '/people/:id' do
      # update first_name, last_name
-     person = Person.find(params[:id])
-     person.first_name = params[:first_name]
-     person.last_name = params[:last_name]
-     person.birthdate = params[:birthdate]
-     person.save
-     redirect "/people/#{person.id}"
+     @person = Person.find(params[:id])
+     @person.first_name = params[:first_name]
+     @person.last_name = params[:last_name]
+     @person.birthdate = params[:birthdate]
+     if @person.valid?
+          @person.save
+          redirect "/people/#{@person.id}"
+     else
+		  @errors = 'You added something invalid. Try again.'
+          @person.errors.full_messages.each do |message|
+               @errors = "#{@errors} #{message}."
+     end
+		erb :"people/edit"
+	 end
 end
 
 delete '/people/:id' do
